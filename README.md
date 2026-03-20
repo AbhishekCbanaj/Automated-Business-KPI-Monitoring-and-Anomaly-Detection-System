@@ -4,6 +4,19 @@ Designed and built an automated business KPI monitoring system to detect anomali
 
 ---
 
+## Demo
+
+### Dashboard Overview
+![Dashboard Overview](https://github.com/user-attachments/assets/fc98fd3b-3f46-474e-a459-7c8c8371b5b2)
+
+### Root Cause Explorer
+![Root Cause Explorer](https://github.com/user-attachments/assets/937d21c5-eda1-4b22-bc19-415e21f5ac4d)
+
+### Walkthrough Video
+[Watch Demo Video](https://github.com/user-attachments/assets/39b9592b-3ac3-41f1-a793-6aace36f80fb)
+
+---
+
 ## Overview
 
 This system simulates how real businesses monitor operational performance and detect issues early.
@@ -26,19 +39,6 @@ This is not just a model. It is a complete monitoring and decision-support syste
 3. Reduces manual effort required for KPI monitoring and issue detection  
 4. Enables faster root cause identification through structured analysis  
 5. Improves operational visibility across business segments  
-
----
-
-## Demo
-
-### Dashboard Overview
-![Dashboard Overview](assets/dashboard_overview.png)
-
-### Root Cause Explorer
-![Root Cause Explorer](assets/dashboard_root_cause.png)
-
-### Walkthrough Video
-[Watch Demo Video](assets/demo_video.mp4)
 
 ---
 
@@ -76,8 +76,6 @@ Store
 Department  
 Item  
 
-This structure enables multi-level monitoring and root cause analysis.
-
 ---
 
 ## Key KPIs
@@ -96,30 +94,19 @@ This structure enables multi-level monitoring and root cause analysis.
 ### Baseline Modeling
 Seasonality-aware baseline using STL decomposition with weekly patterns.
 
----
-
 ### Anomaly Detection
 Residual-based scoring using Median Absolute Deviation to identify deviations from expected trends.
 
----
-
 ### Severity Measurement
-
 1. Statistical deviation from baseline  
 2. Percentage change relative to expected values  
 
----
-
 ### False Positive Control
-
 1. Minimum history requirement  
 2. Cooldown period after anomaly detection  
 3. Grouping of consecutive anomaly events  
 
----
-
 ### Root Cause Analysis
-
 1. Compare historical and anomaly periods  
 2. Measure contribution changes across hierarchy  
 3. Identify top drivers of performance changes  
@@ -149,11 +136,6 @@ kpi-monitoring-system/
 README.md  
 requirements.txt  
 
-assets/  
-dashboard_overview.png  
-dashboard_root_cause.png  
-demo_video.mp4  
-
 data/  
 raw/  
 processed/  
@@ -172,9 +154,9 @@ app/
 streamlit_app.py  
 
 notebooks/  
-data_prep.ipynb  
-detection_eval.ipynb  
-rca_analysis.ipynb  
+01_data_prep_eda.ipynb  
+02_detection_eval.ipynb  
+03_rca_examples.ipynb  
 
 outputs/  
 reports/  
@@ -188,61 +170,13 @@ test_root_cause.py
 
 ## Quickstart
 
-Install dependencies:
-
+### Install
+```bash
 pip install -r requirements.txt
 
-Run pipeline:
+python -m src.m5_ingest
+python -m src.kpi_build
+python -m src.detect
+python -m src.root_cause
 
-python -m src.m5_ingest  
-python -m src.kpi_build  
-python -m src.detect  
-python -m src.root_cause  
-
-Launch dashboard:
-
-streamlit run app/streamlit_app.py  
-
----
-
-## Key Features
-
-1. Automated KPI monitoring across business dimensions  
-2. Seasonality-aware anomaly detection  
-3. Root cause identification for faster issue resolution  
-4. Interactive dashboard for analysis  
-5. Automated incident reporting  
-
----
-
-## Business Use Cases
-
-1. Revenue performance monitoring  
-2. Supply chain and stockout detection  
-3. Pricing anomaly identification  
-4. Demand fluctuation analysis  
-5. Operational performance tracking  
-
----
-
-## Business Impact
-
-1. Enables early detection of business performance issues  
-2. Reduces manual monitoring effort through automation  
-3. Improves decision-making with structured root cause insights  
-4. Scales monitoring across multiple business dimensions  
-5. Converts raw data into actionable business intelligence  
-
----
-
-## License
-
-MIT License  
-
----
-
-## Acknowledgments
-
-1. M5 Forecasting Competition and Walmart  
-2. statsmodels for STL decomposition  
-3. Streamlit for dashboard framework  
+streamlit run app/streamlit_app.py
