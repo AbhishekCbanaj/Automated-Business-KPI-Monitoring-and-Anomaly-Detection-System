@@ -31,12 +31,14 @@ This is not just a model. It is a complete monitoring and decision-support syste
 
 ## Demo
 
-Dashboard screenshots:  
-<img width="1838" height="811" src="https://github.com/user-attachments/assets/fc98fd3b-3f46-474e-a459-7c8c8371b5b2" />  
-<img width="1919" height="890" src="https://github.com/user-attachments/assets/937d21c5-eda1-4e5c-b64b-28725fc31485" />
+### Dashboard Overview
+![Dashboard Overview](assets/dashboard_overview.png)
 
-Walkthrough video:  
-https://github.com/user-attachments/assets/39b9592b-3ac3-41f1-a793-6aace36f80fb
+### Root Cause Explorer
+![Root Cause Explorer](assets/dashboard_root_cause.png)
+
+### Walkthrough Video
+[Watch Demo Video](assets/demo_video.mp4)
 
 ---
 
@@ -146,6 +148,11 @@ kpi-monitoring-system/
 
 README.md  
 requirements.txt  
+
+assets/  
+dashboard_overview.png  
+dashboard_root_cause.png  
+demo_video.mp4  
 
 data/  
 raw/  
