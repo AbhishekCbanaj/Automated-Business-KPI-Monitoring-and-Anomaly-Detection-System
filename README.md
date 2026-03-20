@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # KPI Anomaly Detection System (KPI Sentinel)
 
 A production-style retail KPI monitoring system for anomaly detection and hierarchical root cause analysis, built on the **M5 Forecasting (Walmart daily sales)** dataset.
